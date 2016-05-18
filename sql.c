@@ -1,3 +1,6 @@
+#include <mysql/mysql.h>
+#include <mysql/my_global.h>
+
 static MYSQL *connection;
 
 /**	creates connection to NSA-SQL Database

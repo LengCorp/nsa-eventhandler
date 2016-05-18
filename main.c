@@ -1,15 +1,11 @@
-#include <mysql/mysql.h>
-#include <mysql/my_global.h>
 #include <telldus-core.h>
-#include <time.h>
 #include <stdio.h>
 #include <unistd.h>
 #include <string.h>
 #include "sql.c"
+
 static int callbackId = 0;
-
 static int comingFromCallback = 0;
-
 static int sinceLast = 0;
 static int paused = 0;
 
@@ -35,7 +31,6 @@ void WINAPI sensorEvent(const char *protocol, const char *model, int sensorId, i
     // prints when not -27, soo... cool
     else if(strcmp("-27.0", value) && !comingFromCallback){
 	sinceLast = 0;
-	printf("is cool \n");
     }
 }
 
