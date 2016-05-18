@@ -3,8 +3,10 @@
 
 static MYSQL *connection;
 
-/**	creates connection to NSA-SQL Database
- * 	if it doesnt work the program will close because there is no need for it tu be running without the SQL connection.
+/**	
+ *  creates connection to NSA-SQL Database
+ *  if it doesnt work the program will close because 
+ *  there is no need for it tu be running without the SQL connection.
  */
 void createConnectionSQL(){
     connection = mysql_init(NULL);
@@ -14,8 +16,10 @@ void createConnectionSQL(){
 	exit(1);
     }
 }
-/**	sends data to NSA-SQL Database
- * 	if it doesnt work the program will close because there is no need for it to be running without the posibility to send data SQL.
+/**	
+ *  sends data to NSA-SQL Database
+ *  if it doesnt work the program will close because 
+ *  there is no need for it to be running without the posibility to send data SQL.
  */
 void sendTriggerToSQL(){
     if(mysql_query(connection, "INSERT INTO event(type) VALUES(3)")){
@@ -24,10 +28,11 @@ void sendTriggerToSQL(){
         exit(0);
     }
 }
-/** fetches the last trigger type from database and returns it
- *	returns event type if successful or -1 if fail or NULL.
- */
 
+/** 
+ *  fetches the last trigger type from database and returns it
+ *  returns event type if successful or -1 if fail or NULL.
+ */
 int getLastTriggerFromSQL(){
     
     if(mysql_query(connection, "SELECT type FROM event ORDER BY id DESC LIMIT 1;")){
@@ -48,13 +53,6 @@ int getLastTriggerFromSQL(){
     return -1;
 }
 
-void sendArduinoDisconnectToSQL(){
-    if(mysql_query(connection, "INSERT INTO event(type) VALUES(4)")){
-	fprintf(stderr,"fail connection\n\n %s [%d]\n",mysql_error(connection), mysql_errno(connection));
-        mysql_close(connection);
-        exit(0);
-    }
-}
 
 void triggerdLoop(){
     while(1){
