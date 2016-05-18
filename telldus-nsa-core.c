@@ -16,7 +16,7 @@ void WINAPI sensorEvent(const char *protocol, const char *model, int sensorId, i
 	printf("%s,\t%s,\t%i\n", protocol, model, sensorId);
 
 	//Retrieve the values the sensor supports
-	if (dataType == TELLSTICK_TEMPERATURE && sensorld == 187{
+	if (dataType == TELLSTICK_TEMPERATURE && sensorld == 187){
 			if(!strcmp("0", value)){
 				printf("alarm is working fine");
 				time(&last)	;  // it was okay, so set last to current time
