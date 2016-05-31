@@ -1,5 +1,5 @@
 # nsa_eventhandler
-The eventhandler project for the NSA UNO. Check out our [WIKI](https://github.com/LengCorp/nsa_eventhandler/wiki)!
+The eventhandler project for the NSA UNO. Check out our [WIKI](https://github.com/LengCorp/nsa-eventhandler/wiki)!
 
 ## What it is
 This project is part of the larger NSA UNO project, which is an alarm system for the home. 
