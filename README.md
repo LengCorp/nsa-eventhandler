@@ -3,8 +3,8 @@ The eventhandler project for the NSA UNO. Check out our [WIKI](https://github.co
 
 ## What it is
 This project is part of the larger NSA UNO project, which is an alarm system for the home. 
-This is the alarm unit, which through Radio Frequency, sends oregon protocol messages to communicate with an 
-Telldus Tellstick Duo.
+This is the eventhandling unit, which through Radio Frequency, reads oregon protocol messages with an 
+Telldus Tellstick Duo and writes to database if needed.
 
 ## How it works
 * When the unit is on, and working properly, it will receive data from the nsa-arduino system using the Telldus-core API.
